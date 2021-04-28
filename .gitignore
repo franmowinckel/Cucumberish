@@ -16,11 +16,3 @@ Package.resolved
 /build
 *.pyc
 
-Tests/CucumberishExample/CucumberishExample.xcworkspace/xcuserdata/*
-Tests/CucumberishExample/CucumberishExample.xcodeproj/xcuserdata/*
-Tests/CucumberishExample/Pods/Pods.xcodeproj/xcuserdata/*
-Tests/CucumberishLibraryTest/CucumberishLibrary.xcodeproj/xcuserdata/*
-Tests/CucumberishLibraryTest/CucumberishLibrary.xcodeproj/project.xcworkspace/xcuserdata/*
-
-Tests/CucumberishExample/DerivedData
-Tests/CucumberishExample/Build

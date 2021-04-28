@@ -18,10 +18,10 @@ let package = Package(
         .target(
             name: "Cucumberish",
             path: "Sources",
-            exclude: ["Dependencies/Gherkin/gherkin-languages.json"],
-            sources: ["Cucumberish", "Dependencies", "Utils"],
+            exclude: ["Gherkin/gherkin-languages.json"],
+            sources: ["Cucumberish"],
             resources: [
-                        .process("Dependencies/Gherkin/gherkin-languages.json")],
+                        .process("Gherkin/gherkin-languages.json")],
             publicHeadersPath: "Sources/Cucumberish"
         )
     ]

@@ -25,7 +25,7 @@
 // THE SOFTWARE.
 
 #import "CCIStepDefinition.h"
-#import "../../../Dependencies/Gherkin/GHParser+Extensions.h"
+#import "../../Gherkin/GHParser+Extensions.h"
 #import "../../Utils/NSObject+Dictionary.h"
 #import "CCIFeature.h"
 #import "CCILocation.h"

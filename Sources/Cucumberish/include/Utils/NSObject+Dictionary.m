@@ -1,6 +1,6 @@
 #import "NSObject+Dictionary.h"
 
-#import "../../Dependencies/Gherkin/GHHasLocationProtocol.h"
+#import "../Gherkin/GHHasLocationProtocol.h"
 
 #import <objc/runtime.h>
 
