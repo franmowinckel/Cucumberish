@@ -1,4 +1,4 @@
-﻿#import "GHGherkinDialectProvider.h"
+#import "GHGherkinDialectProvider.h"
 
 #import "GHGherkinDialect.h"
 #import "GHGherkinLanguageSetting.h"
@@ -52,11 +52,8 @@
 
 - (NSDictionary<NSString *, GHGherkinLanguageSetting *> *)languagesSetting
 {
-    NSBundle * gherkinLanguagesBundle = [NSBundle bundleWithPath: [[NSBundle bundleForClass:[self class]] pathForResource: @"GherkinLanguages" ofType: @"bundle"]];
-    if(gherkinLanguagesBundle == nil){
-        gherkinLanguagesBundle = [NSBundle bundleForClass:[self class]];
-    }
-    NSData * languagesFileContent = [NSData dataWithContentsOfFile: [gherkinLanguagesBundle pathForResource: @"gherkin-languages" ofType: @"json"]];
+    NSBundle *bundle = SWIFTPM_MODULE_BUNDLE ?: [NSBundle bundleForClass:[self class]];
+    NSData * languagesFileContent = [NSData dataWithContentsOfFile: [bundle pathForResource: @"gherkin-languages" ofType: @"json"]];
     
     /*TODO: check for error
     if (resourceStream == null)

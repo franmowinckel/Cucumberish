@@ -25,7 +25,7 @@ let package = Package(
         .target(
             name: "Gherkin",
             resources: [
-                        .copy("resources/gherkin-languages.json")]
+                        .process("resources/gherkin-languages.json")]
         )
     ]
 )
