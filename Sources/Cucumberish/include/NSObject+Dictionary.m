@@ -1,6 +1,8 @@
+@import Gherkin;
+
 #import "NSObject+Dictionary.h"
 
-#import "../Gherkin/GHHasLocationProtocol.h"
+// XXX #import "../Gherkin/GHHasLocationProtocol.h"
 
 #import <objc/runtime.h>
 

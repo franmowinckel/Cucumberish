@@ -1,7 +1,7 @@
 //
-//	CCIArgument.h
+//  CCIAroundHock.h
 //
-//	Created by Ahmed Ali on 2/1/2016
+//	Created by Ahmed Ali on 19/1/2016
 //  Copyright © 2016 Ahmed Ali. All rights reserved.
 //
 //
@@ -23,40 +23,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-//	Model file Generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
-
-#import <Foundation/Foundation.h>
-
-/**
- Represents a DocString arguemnt or a DataTable argument passed to a step
- */
-@interface CCIArgument : NSObject
+@import Foundation;
+#import "CCIBlockDefinitions.h"
+@class CCIScenarioDefinition;
 
 
-/**
- In case this is a DataTable arguemnt, then this property will contain array of arrays where each item in the array is a row, that has an array of cells 
- */
-@property (nonatomic, strong) NSArray<NSArray *> * rows;
+@interface CCIAroundHock : NSObject
 
+@property (nonatomic, strong) NSArray * tags;
+@property (nonatomic, copy) CCIScenarioExecutionHockBlock block;
 
-/**
- The string content in case it is a DocString argument
- */
-@property (nonatomic, copy) NSString * content;
-
-/**
- Creates an instance with properties filled from the passed dictionary
- 
- @param dictionary the dictionary that contains all the argument data
- 
- @return argument instance
- */
--(instancetype)initWithDictionary:(NSDictionary *)dictionary;
-
-/**
- Creates a dictionary from the class properties
- 
- @return the created dictionary
- */
--(NSDictionary *)toDictionary;
++ (instancetype)hockWithTags:(NSArray *)tags block:(CCIScenarioExecutionHockBlock)block;
 @end

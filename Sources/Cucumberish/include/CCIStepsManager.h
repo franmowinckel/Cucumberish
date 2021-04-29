@@ -1,8 +1,8 @@
 //
-//  CCIStepDefinition.h
+//  CCIStepsManager.h
 
 //
-//  Created by Ahmed Ali on 02/01/16.
+//  Created by Ahmed Ali on 03/01/16.
 //  Copyright © 2016 Ahmed Ali. All rights reserved.
 //
 //
@@ -24,21 +24,40 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "../CCIBlockDefinitions.h"
+@import Foundation;
+
+
 
 @class CCIStep;
 
+/**
+ CCIStepsManager is a singleton class and its main purpose is to manage all step definitions and execute steps.
+ */
+@interface CCIStepsManager : NSObject
 
+/**
+ A set containing all the steps that are not defined when dry run is enabled
+ */
+@property (nonatomic, strong) NSMutableSet<CCIStep *> *undefinedSteps;
 
-@interface CCIStepDefinition : NSObject<NSCopying>
+/**
+ The step that is being executed
+ */
+@property (nonatomic, strong) CCIStep * currentStep;
 
-@property NSString * regexString;
-@property NSString * type;
-@property NSString * location;
-@property NSArray * matchedValues;
-@property NSDictionary * additionalContent;
-@property (nonatomic, copy) CCIStepBody body;
+/**
+ Returns the singleton class of CCIStepsManager
+ */
++ (instancetype)instance;
 
-+ (instancetype)definitionWithType:(NSString *)type regexString:(NSString *)regex location:(NSString *)location implementationBody:(CCIStepBody)body;
+/**
+ Executes the passed step if it matches any previously defined implementation. Or throw an error if there is no matching definiton.
+ 
+ @param step the to be executed
+ @param testCase the test case that is being executed when this step implementation is being called
+ */
+- (void)executeStep:(CCIStep *)step inTestCase:(id)testCase;
+
+- (BOOL)executeStepInDryRun:(CCIStep *)step inTestCase:(id)testCase;
+
 @end

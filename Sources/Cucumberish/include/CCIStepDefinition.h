@@ -1,5 +1,5 @@
 //
-//  CCIStepDefinition.m
+//  CCIStepDefinition.h
 
 //
 //  Created by Ahmed Ali on 02/01/16.
@@ -24,43 +24,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "CCIStepDefinition.h"
-#import "../../Gherkin/GHParser+Extensions.h"
-#import "../../Utils/NSObject+Dictionary.h"
-#import "CCIFeature.h"
-#import "CCILocation.h"
-#include <stdio.h>
+@import Foundation;
+#import "CCIBlockDefinitions.h"
 
-
-@implementation CCIStepDefinition
-
-
-+ (instancetype)definitionWithType:(NSString *)type regexString:(NSString *)regex location:(NSString *)location implementationBody:(CCIStepBody)body
-{
-    CCIStepDefinition * definition = [CCIStepDefinition new];
-    definition.type = type;
-    definition.regexString = regex;
-    definition.location = location;
-    definition.body = body;
-    return definition;
-}
+@class CCIStep;
 
 
 
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"Definition type: %@, regexString: %@, matchedValues: %@", self.type, self.regexString, self.matchedValues];
-}
+@interface CCIStepDefinition : NSObject<NSCopying>
 
+@property NSString * regexString;
+@property NSString * type;
+@property NSString * location;
+@property NSArray * matchedValues;
+@property NSDictionary * additionalContent;
+@property (nonatomic, copy) CCIStepBody body;
 
-
-#pragma mark - NSCopying
-- (id)copyWithZone:(nullable NSZone *)zone
-{
-    CCIStepDefinition * stepDefinition = [CCIStepDefinition definitionWithType:self.type regexString:self.regexString location:self.location implementationBody:self.body];
-    stepDefinition.matchedValues = self.matchedValues;
-
-    return stepDefinition;
-}
++ (instancetype)definitionWithType:(NSString *)type regexString:(NSString *)regex location:(NSString *)location implementationBody:(CCIStepBody)body;
 @end
-

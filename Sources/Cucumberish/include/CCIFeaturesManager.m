@@ -24,13 +24,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+@import Gherkin;
+
 #import "CCIFeaturesManager.h"
-#import "../../Gherkin/GHParser+Extensions.h"
-#import "../../Utils/NSObject+Dictionary.h"
-#import "../Models/CCIFeature.h"
+#import "NSObject+Dictionary.h"
+#import "CCIFeature.h"
 #import "CCIStepsManager.h"
-#import "../../Cucumberish.h"
-#import "../Models/CCIStepDefinition.h"
+#import "Cucumberish.h"
+#import "CCIStepDefinition.h"
 
 
 

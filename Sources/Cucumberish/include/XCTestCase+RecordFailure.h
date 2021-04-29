@@ -6,8 +6,9 @@
 //  Copyright © 2018 Ahmed Ali. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
-#import "../Core/Models/CCILocation.h"
+@import XCTest;
+
+#import "CCILocation.h"
 
 @interface XCTestCase (RecordFailure)
 

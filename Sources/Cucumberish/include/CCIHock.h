@@ -1,6 +1,5 @@
 //
-//  CCIAroundHock.h
-//
+//  CCIHock.h
 //	Created by Ahmed Ali on 19/1/2016
 //  Copyright © 2016 Ahmed Ali. All rights reserved.
 //
@@ -23,15 +22,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "../CCIBlockDefinitions.h"
+@import Foundation;
+#import "CCIBlockDefinitions.h"
 @class CCIScenarioDefinition;
 
 
-@interface CCIAroundHock : NSObject
+@interface CCIHock : NSObject
 
+@property (nonatomic, copy) CCIScenarioHockBlock block;
 @property (nonatomic, strong) NSArray * tags;
-@property (nonatomic, copy) CCIScenarioExecutionHockBlock block;
 
-+ (instancetype)hockWithTags:(NSArray *)tags block:(CCIScenarioExecutionHockBlock)block;
++ (instancetype)hockWithTags:(NSArray *)tags block:(CCIScenarioHockBlock)block;
 @end

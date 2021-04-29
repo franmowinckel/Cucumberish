@@ -1,5 +1,5 @@
 //
-//	CCILocation.h
+//	CCIBackground.h
 //
 //	Created by Ahmed Ali on 2/1/2016
 //  Copyright © 2016 Ahmed Ali. All rights reserved.
@@ -25,37 +25,22 @@
 
 //	Model file Generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+#import "CCILocation.h"
+#import "CCIStep.h"
 
 /**
- Represents a location of a step, scenario or a feature
- */
-@interface CCILocation : NSObject
-
-/**
- The line where the associate node (step, scenario or a feature) is located
- */
-@property (nonatomic, assign) NSInteger line;
-
-/**
- The exact file path where the node exists
- */
-@property (nonatomic, strong) NSString * filePath;
-
-
-/**
- Creates an instance with properties filled from the passed dictionary
+ Represents a feature background
  
- @param dictionary the dictionary that contains all the location data
- 
- @return location instance
+ Check the Backgroun wiki for detailed information https://github.com/Ahmed-Ali/Cucumberish/wiki/Background
  */
+@interface CCIBackground : NSObject
+
+@property (nonatomic, strong) CCILocation * location;
+
+@property (nonatomic, strong) NSArray * steps;
+
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
-/**
- Creates a dictionary from the class properties
- 
- @return the created dictionary
- */
 -(NSDictionary *)toDictionary;
 @end

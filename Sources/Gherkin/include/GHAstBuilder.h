@@ -1,4 +1,4 @@
-﻿#import <Foundation/Foundation.h>
+#import <Foundation/Foundation.h>
 #import "GHAstNode.h"
 #import "GHParser.h"
 

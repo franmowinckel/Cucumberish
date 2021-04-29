@@ -25,7 +25,7 @@
 
 //	Model file Generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "CCILocation.h"
 #import "CCIArgument.h"
 

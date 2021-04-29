@@ -6,7 +6,7 @@
 //  Copyright © 2017 Ahmed Ali. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 void CCILog(NSString *format, ...);
 

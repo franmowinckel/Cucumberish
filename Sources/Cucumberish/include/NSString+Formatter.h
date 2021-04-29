@@ -1,6 +1,7 @@
 //
-//  CCIHock.h
-//	Created by Ahmed Ali on 19/1/2016
+//  NSString+Formatter.h
+//
+//  Created by Ahmed Ali on 11/01/16.
 //  Copyright © 2016 Ahmed Ali. All rights reserved.
 //
 //
@@ -22,15 +23,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "../CCIBlockDefinitions.h"
-@class CCIScenarioDefinition;
+@import Foundation;
 
+@interface NSString (Formatter)
 
-@interface CCIHock : NSObject
+- (NSString *)camleCaseStringWithFirstUppercaseCharacter:(BOOL)firstUppercaseCharacter;
 
-@property (nonatomic, copy) CCIScenarioHockBlock block;
-@property (nonatomic, strong) NSArray * tags;
-
-+ (instancetype)hockWithTags:(NSArray *)tags block:(CCIScenarioHockBlock)block;
 @end

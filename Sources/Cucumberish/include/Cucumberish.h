@@ -24,22 +24,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <XCTest/XCTest.h>
+@import Foundation;
 
 @class CCIFeature;
-
-// XXX
-//#import "Core/Models/CCIExample.h"
-//#import "Core/Managers/CCIStepsManager.h"
-//#import "Core/Models/CCIArgument.h"
-//#import "Core/CCIBlockDefinitions.h"
-//#import "Core/Models/CCIStep.h"
-//#import "Core/Models/CCIScenarioDefinition.h"
-//#import "Core/Models/CCILocation.h"
-//#import "Core/Models/CCIBackground.h"
-//#import "Core/Models/CCIFeature.h"
-
 
 typedef NS_ENUM(NSInteger, CCILanguage) {
     CCILanguageSwift = 0,

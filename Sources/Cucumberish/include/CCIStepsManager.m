@@ -24,10 +24,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+@import XCTest;
+
 #import "CCIStepsManager.h"
-#import "../../Cucumberish.h"
-#import "../Models/CCIStep.h"
-#import "../Models/CCIStepDefinition.h"
+#import "Cucumberish.h"
+#import "CCIStep.h"
+#import "CCIStepDefinition.h"
 
 typedef void (^XCTContextActivityBlock)(id _Nullable activity);
 

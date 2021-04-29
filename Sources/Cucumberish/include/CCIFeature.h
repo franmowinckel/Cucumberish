@@ -1,5 +1,5 @@
 //
-//	CCIBackground.h
+//	CCIFeature.h
 //
 //	Created by Ahmed Ali on 2/1/2016
 //  Copyright © 2016 Ahmed Ali. All rights reserved.
@@ -25,21 +25,26 @@
 
 //	Model file Generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+#import "CCIBackground.h"
 #import "CCILocation.h"
-#import "CCIStep.h"
+#import "CCIScenarioDefinition.h"
 
 /**
- Represents a feature background
+ Reperesents a feautre information
  
- Check the Backgroun wiki for detailed information https://github.com/Ahmed-Ali/Cucumberish/wiki/Background
+ Checkout the Feaure wiki for more information: https://github.com/Ahmed-Ali/Cucumberish/wiki/Feature
+ 
  */
-@interface CCIBackground : NSObject
+@interface CCIFeature : NSObject
 
+@property (nonatomic, strong) CCIBackground * background;
 @property (nonatomic, strong) CCILocation * location;
-
-@property (nonatomic, strong) NSArray * steps;
-
+@property (nonatomic, copy) NSString * name;
+@property (nonatomic, copy) NSString * docDescription;//this property saves the description of the feature from the parsed feature to save it for JSON output
+@property (nonatomic, strong) NSArray<CCIScenarioDefinition *> * scenarioDefinitions;
+@property (nonatomic, strong) NSArray <NSString *> * tags;
+@property (nonatomic, strong, readonly) NSArray <NSDictionary *> * rawTags;//the tags property loses information needed for the JSON output. This preserves the raw tag formatting
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 -(NSDictionary *)toDictionary;
