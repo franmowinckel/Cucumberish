@@ -24,9 +24,8 @@ let package = Package(
         ),
         .target(
             name: "Gherkin",
-            exclude: ["gherkin-languages.json"],
             resources: [
-                        .process("resources/gherkin-languages.json")]
+                        .copy("resources/gherkin-languages.json")]
         )
     ]
 )
