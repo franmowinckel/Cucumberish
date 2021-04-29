@@ -26,6 +26,16 @@
 
 @import Foundation;
 
+#import "CCIExample.h"
+#import "CCIStepsManager.h"
+#import "CCIArgument.h"
+#import "CCIBlockDefinitions.h"
+#import "CCIStep.h"
+#import "CCIScenarioDefinition.h"
+#import "CCILocation.h"
+#import "CCIBackground.h"
+#import "CCIFeature.h"
+
 @class CCIFeature;
 
 typedef NS_ENUM(NSInteger, CCILanguage) {
